@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     chip8
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _init_chip8, symObjAddr: 0x0, symBinAddr: 0x100003628, symSize: 0x70 }
+  - { offsetInCU: 0x42, offset: 0x42, size: 0x8, addend: 0x0, symName: _init_chip8, symObjAddr: 0x0, symBinAddr: 0x100003628, symSize: 0x70 }
+  - { offsetInCU: 0x6A, offset: 0x6A, size: 0x8, addend: 0x0, symName: _unimplemented, symObjAddr: 0x70, symBinAddr: 0x100003698, symSize: 0xA0 }
+  - { offsetInCU: 0xAA, offset: 0xAA, size: 0x8, addend: 0x0, symName: _execute_opcode, symObjAddr: 0x110, symBinAddr: 0x100003738, symSize: 0xA0 }
+  - { offsetInCU: 0x106, offset: 0x106, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1B0, symBinAddr: 0x1000037D8, symSize: 0x13C }
+  - { offsetInCU: 0x166, offset: 0x166, size: 0x8, addend: 0x0, symName: _disassemble_opcode, symObjAddr: 0x2EC, symBinAddr: 0x100003914, symSize: 0x484 }
+...
