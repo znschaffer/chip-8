@@ -1,18 +1,18 @@
-PROGRAM = chip8
-CC=clang
-LIBS = `pkg-config SDL2 --libs`
-CFLAGS= -g -Wall -Wextra `pkg-config SDL2 --cflags`
+CC = clang
+ROM ?= roms/1-chip8-logo.ch8
+DEBUG ?= false
+CFLAGS = -DDEBUG=$(DEBUG) -g `pkg-config SDL2 --cflags`
+LDFLAGS = -I. `pkg-config SDL2 --libs`
+DEPS = core.h
 
-default: $(PROGRAM)
-all: default
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS) 
 
-OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
-HEADERS = $(wildcard *.h)
+chip8: main.o core.o
+	$(CC) $(LDFLAGS) -o chip8 main.o core.o
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
+clean:
+	rm -rf *.o
 
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
-
-
+run:
+	./chip8 $(ROM)
