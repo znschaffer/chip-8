@@ -1,6 +1,6 @@
 # Chip-8 Emulator
 
-This project is a Chip-8 emulator written in C using SDL2 for graphics rendering. The emulator interprets Chip-8 ROMs, emulating the original Chip-8 system, including the CPU, memory, stack, and screen display.
+Chip-8 emulator written in C using SDL2 for graphics rendering. The emulator interprets Chip-8 ROMs, emulating the original Chip-8 system, including the CPU, memory, stack, and screen display.
 
 ## Features
 
